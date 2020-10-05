@@ -109,8 +109,8 @@
           </el-form-item>
           <el-form-item label="性别" prop="sex">
             <el-radio-group v-model="checkForm.sex" disabled>
-              <el-radio label="女" ></el-radio>
-              <el-radio label="男" ></el-radio>
+              <el-radio label="女"></el-radio>
+              <el-radio label="男"></el-radio>
             </el-radio-group>
           </el-form-item>
           <el-form-item
@@ -128,10 +128,7 @@
                 value="两江人工智能学院"
               ></el-option>
               <el-option label="理学院" value="理学院" readonly></el-option>
-              <el-option
-                label="外国语学院"
-                value="外国语学院"
-              ></el-option>
+              <el-option label="外国语学院" value="外国语学院"></el-option>
               <el-option label="车辆学院" value="车辆学院" readonly></el-option>
             </el-select>
           </el-form-item>
@@ -386,7 +383,8 @@
   padding-left: 70px;
   padding-right: 100px;
 }
-.dome >>> .el-radio__input.is-disabled+span.el-radio__label, .dome >>>  .el-input.is-disabled .el-input__inner{
+.dome >>> .el-radio__input.is-disabled + span.el-radio__label,
+.dome >>> .el-input.is-disabled .el-input__inner {
   color: black;
 }
 </style>
