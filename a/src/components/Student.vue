@@ -509,7 +509,10 @@ export default {
       console.log(a);
       this.$refs[updateForm].validate(valid => {
         if (valid) {
-          alert("修改成功!");
+          this.$message({
+            message: "恭喜你，修改成功！",
+            type: "success"
+          });
           students.splice(
             a - 1,
             1,
@@ -528,7 +531,10 @@ export default {
           console.log(this.updateForm.id);
           this.dialogFormVisibleUpdate = false;
         } else {
-          console.log("修改错误!!");
+          this.$message({
+            message: "修改失败了！",
+            type: "error"
+          });
           return false;
         }
       });
@@ -537,7 +543,10 @@ export default {
       console.log(form);
       this.$refs[form].validate(valid => {
         if (valid) {
-          alert("添加成功!");
+          this.$message({
+            message: "恭喜你，添加成功！",
+            type: "success"
+          });
           students.push(
             new Student(
               this.form.id,
@@ -553,37 +562,37 @@ export default {
           );
           this.dialogFormVisible = false;
         } else {
-          console.log("添加失败!!");
+          this.$message({
+            message: "添加失败了！！",
+            type: "error"
+          });
           return false;
         }
       });
     },
-    open() {
-        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning'
-        }).then(() => {
-          this.$message({
-            type: 'success',
-            message: '删除成功!'
-          });
-        }).catch(() => {
-          this.$message({
-            type: 'info',
-            message: '已取消删除'
-          });          
-        });
-      },
     delStudent: function() {
-      var flag = confirm("确定删除所选项吗？");
-      // var flag = open();
-      
-      for (let i = b.length - 1; i >= 0; i--) {
-        if (flag) {
-          students.splice(b[i], 1);
-        }
-      }
+      var flag = this.$confirm("此操作将永久删除该文件, 是否继续?", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      })
+        .then(() => {
+          for (let i = b.length - 1; i >= 0; i--) {
+            if (flag) {
+              students.splice(b[i], 1);
+            }
+          }
+          this.$message({
+            type: "success",
+            message: "删除成功!"
+          });
+        })
+        .catch(() => {
+          this.$message({
+            type: "info",
+            message: "已取消删除"
+          });
+        });
     },
     getRowKey(row) {
       return row.id;
