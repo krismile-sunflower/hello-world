@@ -97,20 +97,20 @@
             <el-input
               v-model="checkForm.id"
               autocomplete="off"
-              readonly
+              disabled
             ></el-input>
           </el-form-item>
           <el-form-item label="姓名" :label-width="formLabelWidth" prop="name">
             <el-input
               v-model="checkForm.name"
               autocomplete="off"
-              readonly
+              disabled
             ></el-input>
           </el-form-item>
           <el-form-item label="性别" prop="sex">
-            <el-radio-group v-model="checkForm.sex">
-              <el-radio label="女" readonly></el-radio>
-              <el-radio label="男" readonly></el-radio>
+            <el-radio-group v-model="checkForm.sex" disabled>
+              <el-radio label="女" ></el-radio>
+              <el-radio label="男" ></el-radio>
             </el-radio-group>
           </el-form-item>
           <el-form-item
@@ -121,18 +121,16 @@
             <el-select
               v-model="checkForm.college"
               placeholder="请选择学院"
-              readonly
+              disabled
             >
               <el-option
                 label="两江人工智能学院"
                 value="两江人工智能学院"
-                readonly
               ></el-option>
               <el-option label="理学院" value="理学院" readonly></el-option>
               <el-option
                 label="外国语学院"
                 value="外国语学院"
-                readonly
               ></el-option>
               <el-option label="车辆学院" value="车辆学院" readonly></el-option>
             </el-select>
@@ -145,14 +143,14 @@
             <el-input
               v-model="checkForm.profession"
               autocomplete="off"
-              readonly
+              disabled
             ></el-input>
           </el-form-item>
           <el-form-item label="年级" :label-width="formLabelWidth" prop="grade">
             <el-input
               v-model="checkForm.grade"
               autocomplete="off"
-              readonly
+              disabled
             ></el-input>
           </el-form-item>
           <el-form-item
@@ -163,21 +161,21 @@
             <el-input
               v-model="checkForm.classes"
               autocomplete="off"
-              readonly
+              disabled
             ></el-input>
           </el-form-item>
           <el-form-item label="年龄" :label-width="formLabelWidth" prop="age">
             <el-input
               v-model="checkForm.age"
               autocomplete="off"
-              readonly
+              disabled
             ></el-input>
           </el-form-item>
           <el-form-item label="爱好" :label-width="formLabelWidth" prop="hobby">
             <el-input
               v-model="checkForm.hobby"
               autocomplete="off"
-              readonly
+              disabled
             ></el-input>
           </el-form-item>
           <el-form-item style="padding-left: 52px">
@@ -387,6 +385,9 @@
 .dome >>> .el-radio-group {
   padding-left: 70px;
   padding-right: 100px;
+}
+.dome >>> .el-radio__input.is-disabled+span.el-radio__label, .dome >>>  .el-input.is-disabled .el-input__inner{
+  color: black;
 }
 </style>
 
